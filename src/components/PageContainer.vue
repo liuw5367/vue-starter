@@ -1,0 +1,14 @@
+<script setup lang="ts">
+import type { StyleValue } from 'vue'
+
+defineProps<{
+  containerClass?: any
+  style?: StyleValue
+}>()
+</script>
+
+<template>
+  <div h-full w-full overflow-auto p-4 :style="style" :class="containerClass">
+    <slot />
+  </div>
+</template>

@@ -1,3 +1,11 @@
+import 'vue-router'
+
+declare module 'vue-router' {
+  interface RouteMeta {
+    title?: string
+  }
+}
+
 declare interface Window {
   // extend the window
 }
