@@ -62,10 +62,9 @@ export default defineConfig({
     AutoImport({
       dts: 'src/auto-imports.d.ts',
       imports: [
-        // 'vue',
-        // 'vue-i18n',
-        // '@vueuse/head',
+        'vue',
         // '@vueuse/core',
+        // '@vueuse/router',
         VueRouterAutoImports,
         {
           // add any other imports you were relying on

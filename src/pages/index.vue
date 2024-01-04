@@ -1,4 +1,22 @@
 <script setup lang="ts">
+import { useRouteParams, useRouteQuery } from '@vueuse/router'
+
+const userId1 = useRouteParams('userId')
+const userId2 = useRouteParams('userId', '-1') // or with a default value
+const userId3 = useRouteParams('page', '1', { transform: Number }) // or transforming value
+
+console.log(userId1.value, userId2.value, userId3.value)
+
+const search1 = useRouteQuery('search1')
+const search2 = useRouteQuery('search2', 'foo') // or with a default value
+const page3 = useRouteQuery('page', '1', { transform: Number }) // or transforming value
+
+console.log(search1.value, search2.value, page3.value) // route.query.search
+search1.value = 'foobar' // router.replace({ query: { search: 'foobar' } })
+
+// const searchHash = useRouteHash()
+// console.log(searchHash.value) // route.hash
+// searchHash.value = 'foobar' // router.replace({ hash: 'foobar' })
 </script>
 
 <template>

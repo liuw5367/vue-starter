@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import TopMenus from './TopMenus.vue'
 import HeaderRight from './HeaderRight.vue'
 import { APP_NAME } from '@/constants'

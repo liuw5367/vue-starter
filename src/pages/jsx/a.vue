@@ -1,5 +1,4 @@
 <script setup lang="tsx">
-import { ref } from 'vue'
 import PageContainer from '@/components/PageContainer.vue'
 
 const value = ref('vue3 ref ')
