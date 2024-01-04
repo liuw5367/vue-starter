@@ -47,6 +47,7 @@ declare module 'vue-router/auto/routes' {
     '/jsx/': RouteRecordInfo<'/jsx/', '/jsx', Record<never, never>, Record<never, never>>,
     '/jsx/a': RouteRecordInfo<'/jsx/a', '/jsx/a', Record<never, never>, Record<never, never>>,
     '/login': RouteRecordInfo<'/login', '/login', Record<never, never>, Record<never, never>>,
+    '/md/': RouteRecordInfo<'/md/', '/md', Record<never, never>, Record<never, never>>,
   }
 }
 

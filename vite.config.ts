@@ -10,6 +10,10 @@ import AutoImport from 'unplugin-auto-import/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueJsx from '@vitejs/plugin-vue-jsx'
+import Markdown from 'unplugin-vue-markdown/vite'
+import Shiki from 'markdown-it-shikiji'
+import LinkAttributes from 'markdown-it-link-attributes'
+import VueDevTools from 'vite-plugin-vue-devtools'
 import pkg from './package.json'
 
 // https://vitejs.dev/config/
@@ -92,6 +96,31 @@ export default defineConfig({
     // https://github.com/antfu/unocss
     // see uno.config.ts for config
     Unocss(),
+
+    // https://github.com/unplugin/unplugin-vue-markdown
+    Markdown({
+      wrapperClasses: 'prose prose-sm m-auto text-left',
+      headEnabled: true,
+      async markdownItSetup(md) {
+        md.use(LinkAttributes, {
+          matcher: (link: string) => /^https?:\/\//.test(link),
+          attrs: {
+            target: '_blank',
+            rel: 'noopener',
+          },
+        })
+        md.use(await Shiki({
+          defaultColor: 'light',
+          themes: {
+            light: 'github-light',
+            dark: 'github-dark',
+          },
+        }))
+      },
+    }),
+
+    // https://github.com/webfansplz/vite-plugin-vue-devtools
+    VueDevTools(),
   ],
 
   server: {
