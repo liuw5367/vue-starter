@@ -9,6 +9,7 @@ import VueRouter from 'unplugin-vue-router/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+import VueJsx from '@vitejs/plugin-vue-jsx'
 import pkg from './package.json'
 
 // https://vitejs.dev/config/
@@ -28,13 +29,14 @@ export default defineConfig({
         vue: Vue({
           include: [/\.vue$/, /\.md$/],
         }),
+        vueJsx: VueJsx(),
       },
     }),
 
     // https://github.com/posva/unplugin-vue-router
     VueRouter({
       dts: 'src/typed-router.d.ts',
-      extensions: ['.vue', '.md'],
+      extensions: ['.vue', '.md', '.tsx', '.jsx'],
       // list of glob files to exclude from the routes generation
       // e.g. ['**/__*'] will exclude all files and folders starting with `__`
       // e.g. ['**/__*/**/*'] will exclude all files within folders starting with `__`

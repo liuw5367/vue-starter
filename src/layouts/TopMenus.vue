@@ -14,7 +14,7 @@ const items = ref<MenuProps['items']>([
   {
     key: 'app',
     icon: () => h(AppstoreOutlined),
-    label: h(RouterLink, { to: '/login' }, 'login'),
+    label: h(RouterLink, { to: '/login' }, () => 'login'),
     title: 'login',
   },
   {

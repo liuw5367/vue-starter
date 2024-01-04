@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "jsx": "preserve",
+    "jsxImportSource": "vue",
     "lib": ["DOM", "ESNext"],
     "baseUrl": ".",
     "module": "ESNext",
@@ -31,7 +32,8 @@
   "vueCompilerOptions": {
     "plugins": [
       "@vue-macros/volar/define-models",
-      "@vue-macros/volar/define-slots"
+      "@vue-macros/volar/define-slots",
+      "@vue-macros/volar/define-render"
     ]
   },
   "exclude": ["dist", "node_modules", "cypress"]
