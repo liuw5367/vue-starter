@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { reactive } from 'vue'
-import { useRouter } from 'vue-router'
 import { APP_NAME } from '@/constants'
 
 const router = useRouter()
@@ -72,3 +71,8 @@ function onFinishFailed(errorInfo: any) {
     </a-form>
   </PageContainer>
 </template>
+
+<route lang="yaml">
+meta:
+  layout: empty
+</route>

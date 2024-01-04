@@ -1,20 +1,11 @@
 <script setup lang="ts">
+definePage({
+  alias: ['/a/1', '/a/2'],
+})
 </script>
 
 <template>
   <PageContainer>
-    <div class="about">
-      <h1>This is an about page</h1>
-    </div>
+    This is an about page
   </PageContainer>
 </template>
-
-<style scoped>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>

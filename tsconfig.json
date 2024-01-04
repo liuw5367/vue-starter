@@ -12,7 +12,9 @@
     "resolveJsonModule": true,
     "types": [
       "vitest",
-      "vite/client"
+      "vite/client",
+      "vite-plugin-vue-layouts/client",
+      "unplugin-vue-macros/macros-global"
     ],
     "allowJs": true,
     "strict": true,
@@ -25,6 +27,12 @@
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
     "skipLibCheck": true
+  },
+  "vueCompilerOptions": {
+    "plugins": [
+      "@vue-macros/volar/define-models",
+      "@vue-macros/volar/define-slots"
+    ]
   },
   "exclude": ["dist", "node_modules", "cypress"]
 }

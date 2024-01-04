@@ -1,4 +1,4 @@
-// import '@unocss/reset/tailwind.css'
+// import '@unocss/reset/tailwind.css' // 和 ant-design-vue/dist/reset.css 冲突
 import 'ant-design-vue/dist/reset.css'
 import './assets/base.css'
 import 'uno.css'

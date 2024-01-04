@@ -2,7 +2,6 @@
 import { h, ref } from 'vue'
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons-vue'
 import type { MenuProps } from 'ant-design-vue'
-import { RouterLink } from 'vue-router'
 
 const current = ref<string[]>(['mail'])
 const items = ref<MenuProps['items']>([

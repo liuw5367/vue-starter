@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
 import { ref, watch } from 'vue'
 import Header from './Header.vue'
 import LeftMenus from './LeftMenus.vue'
@@ -20,15 +19,12 @@ console.log('pathname: %s', pathname.value)
 
 <template>
   <div h-screen w-screen flex flex-col overflow-hidden>
-    <RouterView v-if="pathname === '/login'" />
-    <template v-else>
-      <Header />
-      <div w-full flex flex-1 overflow-hidden>
-        <LeftMenus />
-        <div w-full flex-1>
-          <RouterView />
-        </div>
+    <Header />
+    <div w-full flex flex-1 overflow-hidden>
+      <LeftMenus />
+      <div w-full flex-1>
+        <RouterView />
       </div>
-    </template>
+    </div>
   </div>
 </template>
