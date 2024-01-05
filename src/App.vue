@@ -3,8 +3,6 @@ import { theme } from 'ant-design-vue'
 import { APP_NAME } from '@/constants'
 import { isDark } from '@/composables'
 
-// useTitle(APP_NAME)
-
 useHead({
   title: APP_NAME,
 })

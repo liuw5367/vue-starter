@@ -3,6 +3,7 @@
     "vue.volar",
     "Vue.vscode-typescript-vue-plugin",
     "dbaeumer.vscode-eslint",
+    "antfu.goto-alias",
     "antfu.iconify",
     "antfu.unocss"
   ]
