@@ -19,6 +19,7 @@
     "@vueuse/core": "^10.7.1",
     "@vueuse/router": "^10.7.1",
     "ant-design-vue": "^4.0.8",
+    "nprogress": "^0.2.0",
     "pinia": "^2.1.7",
     "vue": "^3.4.4",
     "vue-router": "^4.2.5"
@@ -27,6 +28,7 @@
     "@antfu/eslint-config": "^2.6.1",
     "@types/markdown-it-link-attributes": "^3.0.4",
     "@types/node": "^18.19.4",
+    "@types/nprogress": "^0.2.3",
     "@unocss/eslint-config": "^0.58.3",
     "@vitejs/plugin-vue": "^5.0.2",
     "@vitejs/plugin-vue-jsx": "^3.1.0",

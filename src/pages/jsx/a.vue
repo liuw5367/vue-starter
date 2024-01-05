@@ -5,10 +5,11 @@ const value = ref('vue3 ref ')
 
 defineRender(
   <PageContainer>
-    <span>
-      jsx: b,
+    <div>
+      jsx:
       {value.value}
-    </span>
+    </div>
+    <RouterLink to="/a/x/s">404</RouterLink>
   </PageContainer>,
 )
 </script>
