@@ -1,15 +1,14 @@
 <script setup lang="tsx">
 import PageContainer from '@/components/PageContainer.vue'
 
-const value = ref('vue3 ref ')
+const value = ref('use defineRender')
 
 defineRender(
   <PageContainer>
     <div>
-      jsx:
-      {value.value}
+      <span>jsx: </span>
+      <span>{value.value}</span>
     </div>
-    <RouterLink to="/a/x/s">404</RouterLink>
   </PageContainer>,
 )
 </script>

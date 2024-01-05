@@ -1,10 +1,21 @@
 <script setup lang="ts">
-import { useTitle } from '@vueuse/core'
+import { theme } from 'ant-design-vue'
 import { APP_NAME } from '@/constants'
+import { isDark } from '@/composables'
 
-useTitle(APP_NAME)
+// useTitle(APP_NAME)
+
+useHead({
+  title: APP_NAME,
+})
 </script>
 
 <template>
-  <RouterView />
+  <a-config-provider
+    :theme="{
+      algorithm: isDark ? theme.darkAlgorithm : theme.defaultAlgorithm,
+    }"
+  >
+    <RouterView />
+  </a-config-provider>
 </template>

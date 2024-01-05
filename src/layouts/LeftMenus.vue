@@ -1,10 +1,9 @@
 <script lang="ts" setup>
 import type { VueElement } from 'vue'
-import { h, reactive, ref, watch } from 'vue'
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons-vue'
+import { HomeOutlined, MailOutlined } from '@ant-design/icons-vue'
 import type { ItemType, MenuProps } from 'ant-design-vue'
 
-const selectedKeys = ref<string[]>(['1'])
+const selectedKeys = ref<string[]>(['home'])
 const openKeys = ref<string[]>(['sub1'])
 
 function getItem(
@@ -24,25 +23,25 @@ function getItem(
 }
 
 const items: ItemType[] = reactive([
+  {
+    key: 'home',
+    title: 'home',
+    icon: h(HomeOutlined),
+    label: h(RouterLink, { to: '/' }, () => 'home'),
+  },
   getItem('One', 'sub1', () => h(MailOutlined), [
-    getItem('Item 1', 'g1', null, [getItem('Option 1', '1'), getItem('Option 2', '2')], 'group'),
-    getItem('Item 2', 'g2', null, [getItem('Option 3', '3'), getItem('Option 4', '4')], 'group'),
-  ]),
-
-  getItem('Two', 'sub2', () => h(AppstoreOutlined), [
-    getItem('Option 5', '5'),
-    getItem('Option 6', '6'),
-    getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
+    getItem('func', 'g1', null, [
+      { key: '1', label: h(RouterLink, { to: '/store' }, () => 'store') },
+      { key: '2', label: h(RouterLink, { to: '/md' }, () => 'markdown') },
+    ], 'group'),
+    getItem('JSX', 'g2', null, [
+      { key: 'jsx-a', label: h(RouterLink, { to: '/jsx/a' }, () => 'defineComponent') },
+      { key: 'jsx-b', label: h(RouterLink, { to: '/jsx/b' }, () => 'defineRender') },
+      getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
+    ], 'group'),
   ]),
 
   { type: 'divider' },
-
-  getItem('Three', 'sub4', () => h(SettingOutlined), [
-    getItem('Option 9', '9'),
-    getItem('Option 10', '10'),
-    getItem('Option 11', '11'),
-    getItem('Option 12', '12'),
-  ]),
 
   getItem('Group', 'grp', null, [getItem('Option 13', '13'), getItem('Option 14', '14')], 'group'),
 ])

@@ -19,35 +19,22 @@ const items = ref<MenuProps['items']>([
   {
     key: 'sub1',
     icon: () => h(SettingOutlined),
-    label: 'Three - Submenu',
-    title: 'Three - Submenu',
+    label: 'Submenu',
+    title: 'Submenu',
     children: [
       {
         type: 'group',
         label: 'Item 1',
         children: [
-          {
-            label: 'Option 1',
-            key: 'setting:1',
-          },
-          {
-            label: 'Option 2',
-            key: 'setting:2',
-          },
+          { label: 'Option 1', key: 'setting:1' },
+          { label: 'Option 2', key: 'setting:2' },
         ],
       },
       {
         type: 'group',
         label: 'Item 2',
         children: [
-          {
-            label: 'Option 3',
-            key: 'setting:3',
-          },
-          {
-            label: 'Option 4',
-            key: 'setting:4',
-          },
+          { label: 'Option 3', key: 'setting:3' },
         ],
       },
     ],

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
 import Header from './Header.vue'
 import LeftMenus from './LeftMenus.vue'
 

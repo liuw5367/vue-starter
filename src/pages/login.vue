@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { reactive } from 'vue'
 import { APP_NAME } from '@/constants'
 
 const router = useRouter()

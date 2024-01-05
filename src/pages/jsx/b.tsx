@@ -1,14 +1,15 @@
-import { defineComponent, ref } from 'vue'
 import PageContainer from '@/components/PageContainer.vue'
 
 export default defineComponent({
   render() {
-    const value = ref('vue3 ref ')
+    const value = ref('use defineComponent')
 
     return (
       <PageContainer>
-        JSX Test:
-        {value.value}
+        <div>
+          <span>jsx: </span>
+          <span>{value.value}</span>
+        </div>
       </PageContainer>
     )
   },

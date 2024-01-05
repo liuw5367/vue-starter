@@ -8,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <div id="page-container" h-full w-full overflow-auto p-4 :style="style" :class="containerClass">
+  <div id="page-container" h-full w-full overflow-auto p-6 :style="style" :class="containerClass">
     <slot />
   </div>
 </template>
