@@ -19,6 +19,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Set Project Name
+        run: echo "PROJECT_NAME=${{ env.GITHUB_REPOSITORY#*/ }}"
+
+      - name: Print Project Name
+        run: |
+          echo "Project Name: $PROJECT_NAME"
+
       - uses: pnpm/action-setup@v2
         with:
           version: 8
@@ -37,5 +44,5 @@ jobs:
       - name: Deploy Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./${{ env.$PROJECT_NAME }}/dist
