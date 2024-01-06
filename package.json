@@ -1,8 +1,9 @@
 {
   "name": "vue-starter",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
+  "homepage": "https://[username].github.io/vue-starter",
   "scripts": {
     "dev": "vite",
     "start": "vite --port 3333",
