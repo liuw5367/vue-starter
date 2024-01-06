@@ -21,6 +21,7 @@ search1.value = 'foobar' // router.replace({ query: { search: 'foobar' } })
 
 <template>
   <PageContainer container-class="pl-10">
+    <SvgIcon name="community" class="text-$color-primary !h-10 !w-10" />
     <TheWelcome />
   </PageContainer>
 </template>

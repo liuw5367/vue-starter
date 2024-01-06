@@ -14,6 +14,7 @@ import Markdown from 'unplugin-vue-markdown/vite'
 import Shiki from 'markdown-it-shikiji'
 import LinkAttributes from 'markdown-it-link-attributes'
 import VueDevTools from 'vite-plugin-vue-devtools'
+import UnpluginSvgComponent from 'unplugin-svg-component/vite'
 import pkg from './package.json'
 
 // https://vitejs.dev/config/
@@ -39,7 +40,7 @@ export default defineConfig({
 
     // https://github.com/posva/unplugin-vue-router
     VueRouter({
-      dts: 'src/typed-router.d.ts',
+      dts: 'src/types/typed-router.d.ts',
       extensions: ['.vue', '.md', '.tsx', '.jsx'],
       // list of glob files to exclude from the routes generation
       // e.g. ['**/__*'] will exclude all files and folders starting with `__`
@@ -60,7 +61,7 @@ export default defineConfig({
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
-      dts: 'src/auto-imports.d.ts',
+      dts: 'src/types/auto-imports.d.ts',
       imports: [
         'vue',
         // '@vueuse/core',
@@ -80,7 +81,7 @@ export default defineConfig({
 
     // https://github.com/antfu/unplugin-vue-components
     Components({
-      dts: 'src/components.d.ts',
+      dts: 'src/types/components.d.ts',
       // allow auto load markdown components under `./src/components/`
       extensions: ['vue', 'md'],
       // allow auto import and register components used in markdown
@@ -109,13 +110,22 @@ export default defineConfig({
           },
         })
         md.use(await Shiki({
-          defaultColor: 'light',
+          defaultColor: false,
           themes: {
             light: 'github-light',
             dark: 'github-dark',
           },
         }))
       },
+    }),
+
+    // https://github.com/jpkleemans/vite-svg-loader
+    // svgLoader(),
+    // https://github.com/Jevon617/unplugin-svg-component
+    UnpluginSvgComponent({
+      iconDir: 'src/assets',
+      dts: true,
+      dtsDir: 'src/types',
     }),
 
     // https://github.com/webfansplz/vite-plugin-vue-devtools

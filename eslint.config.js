@@ -5,7 +5,7 @@ export default antfu(
   {
     unocss: true,
     formatters: true,
-    ignores: ['**/*.md'],
+    ignores: ['**/*.md', 'src/types/svg-component-global.d.ts', 'src/types/svg-component.d.ts'],
   },
   {
     rules: {

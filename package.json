@@ -47,6 +47,7 @@
     "typescript": "~5.3.3",
     "unocss": "^0.58.3",
     "unplugin-auto-import": "^0.17.3",
+    "unplugin-svg-component": "^0.8.0",
     "unplugin-vue-components": "^0.26.0",
     "unplugin-vue-macros": "^2.7.7",
     "unplugin-vue-markdown": "^0.25.2",
