@@ -1,1 +1,0 @@
-import{aX as n,r,e as u}from"./index-I_vRXbCI.js";const a=n("counter",()=>{const e=r(0),o=u(()=>e.value*2);function t(){e.value++}return{count:e,doubleCount:o,increment:t}}),c=n("user",()=>{const e=r();function o(t){e.value=t}return{user:e,saveUserInfo:o}});export{a,c as u};
