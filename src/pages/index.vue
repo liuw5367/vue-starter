@@ -17,6 +17,8 @@ search1.value = 'foobar' // router.replace({ query: { search: 'foobar' } })
 // const searchHash = useRouteHash()
 // console.log(searchHash.value) // route.hash
 // searchHash.value = 'foobar' // router.replace({ hash: 'foobar' })
+
+fetch('/api/list').then(console.log)
 </script>
 
 <template>

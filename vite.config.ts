@@ -15,10 +15,11 @@ import Shiki from 'markdown-it-shikiji'
 import LinkAttributes from 'markdown-it-link-attributes'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import UnpluginSvgComponent from 'unplugin-svg-component/vite'
+import { viteMockServe } from 'vite-plugin-mock'
 import pkg from './package.json'
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   define: {
     __APP_VERSION__: JSON.stringify(pkg.version),
   },
@@ -130,6 +131,12 @@ export default defineConfig({
 
     // https://github.com/webfansplz/vite-plugin-vue-devtools
     VueDevTools(),
+
+    // https://github.com/vbenjs/vite-plugin-mock
+    viteMockServe({
+      mockPath: 'src/mock',
+      enable: command !== 'build',
+    }),
   ],
 
   server: {
@@ -142,4 +149,4 @@ export default defineConfig({
       },
     },
   },
-})
+}))
