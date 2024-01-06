@@ -1,0 +1,1 @@
+import{_ as a}from"./PageContainer.vue_vue_type_script_setup_true_lang-nIP_1SlQ.js";import{d as o,r,b as e,a as s}from"./index-I_vRXbCI.js";const u=o({render(){const n=r("use defineComponent");return e(a,null,{default:()=>[e("div",null,[e("span",null,[s("jsx: ")]),e("span",null,[n.value])])]})}});export{u as default};

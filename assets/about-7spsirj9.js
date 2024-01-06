@@ -1,0 +1,1 @@
+import{_ as a}from"./PageContainer.vue_vue_type_script_setup_true_lang-nIP_1SlQ.js";import{d as e,o as n,c as s,w as c,a as r}from"./index-I_vRXbCI.js";import{b as o}from"./route-block-zudrvJp0.js";const _=e({__name:"about",setup(i){return(p,f)=>{const t=a;return n(),s(t,null,{default:c(()=>[r(" This is an about page ")]),_:1})}}});typeof o=="function"&&o(_);export{_ as default};

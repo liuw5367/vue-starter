@@ -1,0 +1,1 @@
+import{d as l,o as n,ai as o,aR as s,a_ as t,a$ as r}from"./index-I_vRXbCI.js";const m=l({__name:"PageContainer",props:{containerClass:null,style:{type:[Boolean,String]}},setup(e){return(a,i)=>(n(),o("div",{id:"page-container","h-full":"","w-full":"","overflow-auto":"","p-6":"",style:t(e.style),class:r(e.containerClass)},[s(a.$slots,"default")],6))}});export{m as _};
