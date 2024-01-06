@@ -10,21 +10,19 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
 
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set Project Name
-        run: echo "PROJECT_NAME=${{ env.GITHUB_REPOSITORY#*/ }}"
-
-      - name: Print Project Name
+      - name: Set ENV variables
         run: |
-          echo "Project Name: $PROJECT_NAME"
+          echo "REPO_NAME=${GITHUB_REPOSITORY#$GITHUB_REPOSITORY_OWNER/}" >> $GITHUB_ENV
+
+      - name: Use the custom ENV variable
+        run: |
+          echo $REPO_NAME
 
       - uses: pnpm/action-setup@v2
         with:
@@ -39,10 +37,34 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm run build
+        run: npx vite build --base=/${{ env.REPO_NAME }}/
 
-      - name: Deploy Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./${{ env.$PROJECT_NAME }}/dist
+          # Upload dist repository
+          path: ./dist
+
+  deploy:
+    # Add a dependency to the build job
+    needs: build
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
