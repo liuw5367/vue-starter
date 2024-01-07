@@ -1,7 +1,7 @@
 {
   "name": "vue-starter",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "homepage": "https://liuw5367.github.io/vue-starter",
   "scripts": {
@@ -30,6 +30,7 @@
     "@antfu/eslint-config": "^2.6.1",
     "@commitlint/cli": "^18.4.4",
     "@commitlint/config-conventional": "^18.4.4",
+    "@iconify-json/carbon": "^1.1.27",
     "@types/markdown-it-link-attributes": "^3.0.4",
     "@types/node": "^18.19.4",
     "@types/nprogress": "^0.2.3",
@@ -47,6 +48,7 @@
     "typescript": "~5.3.3",
     "unocss": "^0.58.3",
     "unplugin-auto-import": "^0.17.3",
+    "unplugin-icons": "^0.18.1",
     "unplugin-svg-component": "^0.8.0",
     "unplugin-vue-components": "^0.26.0",
     "unplugin-vue-macros": "^2.7.7",

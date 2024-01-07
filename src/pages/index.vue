@@ -23,7 +23,27 @@ fetch('/api/list').then(console.log)
 
 <template>
   <PageContainer container-class="pl-10">
-    <SvgIcon name="community" class="text-$color-primary !h-10 !w-10" />
+    <div flex items-center space-x-4>
+      <!-- svg -->
+      <SvgIcon name="community" class="text-$color-primary !h-8 !w-8" />
+    </div>
+    <div flex items-center space-x-4>
+      <!-- unocss presetIcons -->
+      <div class="i-carbon-accessibility h-8 w-8 text-$color-primary" />
+      <div class="i-carbon-chat-bot" />
+      <div class="i-carbon-chat-bot" />
+      <div class="i-carbon-accessibility" />
+      <div class="i-carbon-chat" />
+    </div>
+    <div flex items-center space-x-4>
+      <!-- unplugin-icons -->
+      <i-carbon-accessibility class="h-8 w-8 text-$color-primary" />
+      <i-carbon-chat-bot />
+      <!-- unplugin-icons -->
+      <ICarbonChatBot />
+      <ICarbonAccessibility />
+      <ICarbonChat />
+    </div>
     <TheWelcome />
   </PageContainer>
 </template>

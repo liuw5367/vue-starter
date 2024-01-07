@@ -17,10 +17,17 @@ export default defineConfig({
     // https://unocss.dev/presets/icons
     presetIcons({
       scale: 1.2,
-      // 1. 安装依赖依赖包 https://iconify.design/
-      // @iconify-json/mdi for Material Design Icons
-      // @iconify-json/tabler for Tabler
-      // @iconify-json/carbon
+      extraProperties: {
+        'display': 'inline-block',
+        'vertical-align': 'middle',
+      },
+      // 1. 安装图标依赖包
+      // https://iconify.design/
+      // https://icon-sets.iconify.design/
+      // @iconify-json/mdi
+      // @iconify-json/tabler
+      // @iconify-json/ant-design
+      // 本项目已安装 @iconify-json/carbon 用作示例
       // 2. 使用 CDN
       cdn: 'https://esm.sh/',
     }),

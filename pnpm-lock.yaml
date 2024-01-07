@@ -43,6 +43,9 @@ devDependencies:
   '@commitlint/config-conventional':
     specifier: ^18.4.4
     version: 18.4.4
+  '@iconify-json/carbon':
+    specifier: ^1.1.27
+    version: 1.1.27
   '@types/markdown-it-link-attributes':
     specifier: ^3.0.4
     version: 3.0.4
@@ -94,6 +97,9 @@ devDependencies:
   unplugin-auto-import:
     specifier: ^0.17.3
     version: 0.17.3(@vueuse/core@10.7.1)
+  unplugin-icons:
+    specifier: ^0.18.1
+    version: 0.18.1(@vue/compiler-sfc@3.4.4)
   unplugin-svg-component:
     specifier: ^0.8.0
     version: 0.8.0(@vue/compiler-sfc@3.4.4)
@@ -1091,6 +1097,12 @@ packages:
 
   /@humanwhocodes/object-schema@2.0.1:
     resolution: {integrity: sha512-dvuCeX5fC9dXgJn9t+X5atfmgQAzUOWqS1254Gh0m6i8wKd10ebXkfNKiRK+1GWi/yTvvLDHpoxLr0xxxeslWw==}
+    dev: true
+
+  /@iconify-json/carbon@1.1.27:
+    resolution: {integrity: sha512-tJVXv9+D9cjU5HcaY+8J0awv9AL/Mjo9MWR/fxHfHFPP/iokjPBEgq4jOBDGNe8W0k/BTrVI3zpgZjLoi6RNGg==}
+    dependencies:
+      '@iconify/types': 2.0.0
     dev: true
 
   /@iconify/types@2.0.0:
@@ -6915,6 +6927,38 @@ packages:
       esbuild: 0.19.11
       unplugin: 1.6.0
       vite: 5.0.10(@types/node@18.19.4)
+    dev: true
+
+  /unplugin-icons@0.18.1(@vue/compiler-sfc@3.4.4):
+    resolution: {integrity: sha512-WzKu/eoq74YC7vyEAGsFebkRzsZrRkR4FUzLU6gbpfa7WRaVVpQS2n7LSxE1iRUN0scKL5b9bq+i0wucR+ttFQ==}
+    peerDependencies:
+      '@svgr/core': '>=7.0.0'
+      '@svgx/core': ^1.0.1
+      '@vue/compiler-sfc': ^3.0.2 || ^2.7.0
+      vue-template-compiler: ^2.6.12
+      vue-template-es2015-compiler: ^1.9.0
+    peerDependenciesMeta:
+      '@svgr/core':
+        optional: true
+      '@svgx/core':
+        optional: true
+      '@vue/compiler-sfc':
+        optional: true
+      vue-template-compiler:
+        optional: true
+      vue-template-es2015-compiler:
+        optional: true
+    dependencies:
+      '@antfu/install-pkg': 0.3.1
+      '@antfu/utils': 0.7.7
+      '@iconify/utils': 2.1.14
+      '@vue/compiler-sfc': 3.4.4
+      debug: 4.3.4
+      kolorist: 1.8.0
+      local-pkg: 0.5.0
+      unplugin: 1.6.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /unplugin-svg-component@0.8.0(@vue/compiler-sfc@3.4.4):

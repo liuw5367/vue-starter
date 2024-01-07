@@ -16,6 +16,8 @@ import LinkAttributes from 'markdown-it-link-attributes'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import UnpluginSvgComponent from 'unplugin-svg-component/vite'
 import { viteMockServe } from 'vite-plugin-mock'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 import pkg from './package.json'
 
 // https://vitejs.dev/config/
@@ -91,6 +93,7 @@ export default defineConfig(({ command }) => ({
         AntDesignVueResolver({
           importStyle: false, // css in js
         }),
+        IconsResolver(),
       ],
     }),
 
@@ -120,6 +123,17 @@ export default defineConfig(({ command }) => ({
       },
     }),
 
+    // 同 presetIcons，需安装需要图标库
+    // https://iconify.design/
+    // https://icon-sets.iconify.design/
+    // 本项目已安装 @iconify-json/carbon 用作示例
+    // https://github.com/unplugin/unplugin-icons
+    Icons({
+      scale: 1.2, // Scale of icons against 1em
+      // defaultStyle: '', // Style apply to icons
+      // defaultClass: '', // Class names apply to icons
+    }),
+
     // https://github.com/jpkleemans/vite-svg-loader
     // svgLoader(),
     // https://github.com/Jevon617/unplugin-svg-component
@@ -127,6 +141,7 @@ export default defineConfig(({ command }) => ({
       iconDir: 'src/assets',
       dts: true,
       dtsDir: 'src/types',
+      componentStyle: 'width: 1em; height: 1em; fill:currentColor; scale: 1.2',
     }),
 
     // https://github.com/webfansplz/vite-plugin-vue-devtools
