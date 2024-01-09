@@ -7,16 +7,19 @@ export default <MockMethod[]>[
   {
     url: '/api/list',
     method: 'get',
-    timeout: 1000,
+    timeout: 500,
     response: ({ query }) => {
       const total = 12345
-      const pageNum = Number(query.currentPage || 1)
+      const pageNum = Number(query.pageNum || 1)
       const pageSize = Number(query.pageSize || 10)
       return {
         code: 0,
         message: '',
         data: {
-          records: Array(Number(pageNum) * Number(pageSize) > total ? total % Number(pageSize) : Number(pageSize))
+          total,
+          size: pageSize,
+          current: pageNum,
+          list: Array(Number(pageNum) * Number(pageSize) > total ? total % Number(pageSize) : Number(pageSize))
             .fill(1)
             .map(() => ({
               id: Random.id(),
@@ -25,9 +28,6 @@ export default <MockMethod[]>[
               birth: Random.datetime('yyyy-MM-dd HH:mm:ss'),
               email: Random.email(),
             })),
-          total,
-          size: pageSize,
-          current: pageNum,
         },
       }
     },

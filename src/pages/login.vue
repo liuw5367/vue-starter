@@ -27,7 +27,7 @@ function onFinishFailed(errorInfo: any) {
 </script>
 
 <template>
-  <PageContainer container-class="flex flex-col items-center justify-center space-y-6">
+  <PageContainer class="flex flex-col items-center justify-center space-y-6">
     <div font-bold>
       {{ APP_NAME }}
     </div>

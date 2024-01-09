@@ -60,6 +60,9 @@ declare global {
   const useHead: typeof import('@vueuse/head')['useHead']
   const useLink: typeof import('vue-router/auto')['useLink']
   const useRoute: typeof import('vue-router/auto')['useRoute']
+  const useRouteHash: typeof import('@vueuse/router')['useRouteHash']
+  const useRouteParams: typeof import('@vueuse/router')['useRouteParams']
+  const useRouteQuery: typeof import('@vueuse/router')['useRouteQuery']
   const useRouter: typeof import('vue-router/auto')['useRouter']
   const useSeoMeta: typeof import('@vueuse/head')['useSeoMeta']
   const useSlots: typeof import('vue')['useSlots']
@@ -133,6 +136,9 @@ declare module 'vue' {
     readonly useHead: UnwrapRef<typeof import('@vueuse/head')['useHead']>
     readonly useLink: UnwrapRef<typeof import('vue-router/auto')['useLink']>
     readonly useRoute: UnwrapRef<typeof import('vue-router/auto')['useRoute']>
+    readonly useRouteHash: UnwrapRef<typeof import('@vueuse/router')['useRouteHash']>
+    readonly useRouteParams: UnwrapRef<typeof import('@vueuse/router')['useRouteParams']>
+    readonly useRouteQuery: UnwrapRef<typeof import('@vueuse/router')['useRouteQuery']>
     readonly useRouter: UnwrapRef<typeof import('vue-router/auto')['useRouter']>
     readonly useSeoMeta: UnwrapRef<typeof import('@vueuse/head')['useSeoMeta']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
@@ -199,6 +205,9 @@ declare module '@vue/runtime-core' {
     readonly useHead: UnwrapRef<typeof import('@vueuse/head')['useHead']>
     readonly useLink: UnwrapRef<typeof import('vue-router/auto')['useLink']>
     readonly useRoute: UnwrapRef<typeof import('vue-router/auto')['useRoute']>
+    readonly useRouteHash: UnwrapRef<typeof import('@vueuse/router')['useRouteHash']>
+    readonly useRouteParams: UnwrapRef<typeof import('@vueuse/router')['useRouteParams']>
+    readonly useRouteQuery: UnwrapRef<typeof import('@vueuse/router')['useRouteQuery']>
     readonly useRouter: UnwrapRef<typeof import('vue-router/auto')['useRouter']>
     readonly useSeoMeta: UnwrapRef<typeof import('@vueuse/head')['useSeoMeta']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>

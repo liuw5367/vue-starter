@@ -6,8 +6,7 @@ import { APP_NAME } from '@/constants'
 
 <template>
   <div
-    style="height: var(--header-height);
-    min-height: var(--header-height);"
+    style="height: var(--header-height); min-height: var(--header-height);"
     border-b="~ solid gray-200"
     flex items-center justify-between px-6 space-x-6
   >

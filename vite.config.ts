@@ -30,6 +30,14 @@ export default defineConfig(({ command }) => ({
       '@': `${path.resolve(__dirname, 'src')}/`,
     },
   },
+  build: {
+    chunkSizeWarningLimit: 2048,
+    // minify: 'terser',
+    // terserOptions: { compress: { drop_console: true, drop_debugger: true } },
+  },
+  esbuild: {
+    drop: command === 'build' ? ['debugger', 'console'] : [],
+  },
   plugins: [
     // https://github.com/vue-macros/vue-macros
     VueMacros({
@@ -51,9 +59,7 @@ export default defineConfig(({ command }) => ({
       // e.g. ['**/*.component.vue'] will exclude components ending with `.component.vue`
       exclude: [
         '**/_*',
-        '**/__*',
         '**/_*/**/*',
-        '**/__*/**/*',
         '**/*.component.vue',
         '**/components/*.vue',
       ],
@@ -71,8 +77,8 @@ export default defineConfig(({ command }) => ({
         '@vueuse/head',
         VueRouterAutoImports,
         {
-          // add any other imports you were relying on
           'vue-router/auto': ['useLink', 'RouterLink'],
+          '@vueuse/router': ['useRouteParams', 'useRouteQuery', 'useRouteHash'],
         },
       ],
       dirs: [
@@ -149,7 +155,7 @@ export default defineConfig(({ command }) => ({
 
     // https://github.com/vbenjs/vite-plugin-mock
     viteMockServe({
-      mockPath: 'src/mock',
+      mockPath: 'src/mocks',
       enable: command !== 'build',
     }),
   ],

@@ -4,7 +4,7 @@ import { useColorMode } from '@vueuse/core'
 import { useUserStore } from '@/stores'
 import { toggleDark } from '@/composables'
 
-const version = ref(__APP_VERSION__)
+const version = __APP_VERSION__
 const { user } = useUserStore()
 
 const colorMode = useColorMode()

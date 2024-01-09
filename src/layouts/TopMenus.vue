@@ -1,48 +1,63 @@
 <script lang="ts" setup>
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons-vue'
+import { AntDesignOutlined, AppstoreOutlined, GithubOutlined, HomeOutlined } from '@ant-design/icons-vue'
 import type { MenuProps } from 'ant-design-vue'
 
 const current = ref<string[]>(['mail'])
 const items = ref<MenuProps['items']>([
   {
-    key: 'mail',
-    icon: () => h(MailOutlined),
-    label: 'home',
+    key: 'home',
     title: 'home',
+    icon: h(HomeOutlined),
+    label: h(RouterLink, { to: '/' }, () => 'home'),
   },
+
   {
-    key: 'app',
-    icon: () => h(AppstoreOutlined),
-    label: h(RouterLink, { to: '/login' }, () => 'login'),
-    title: 'login',
-  },
-  {
-    key: 'sub1',
-    icon: () => h(SettingOutlined),
-    label: 'Submenu',
-    title: 'Submenu',
+    key: 'One',
+    label: 'One',
+    icon: h(AppstoreOutlined),
     children: [
       {
-        type: 'group',
-        label: 'Item 1',
+        key: 'function',
+        label: 'function',
         children: [
-          { label: 'Option 1', key: 'setting:1' },
-          { label: 'Option 2', key: 'setting:2' },
+          { key: 'list', label: h(RouterLink, { to: '/list' }, () => 'list') },
+          { key: 'store', label: h(RouterLink, { to: '/store' }, () => 'store') },
+          { key: 'markdown', label: h(RouterLink, { to: '/md' }, () => 'markdown') },
         ],
       },
       {
-        type: 'group',
-        label: 'Item 2',
+        key: 'jsx',
+        label: 'jsx',
         children: [
-          { label: 'Option 3', key: 'setting:3' },
+          { key: 'jsx-a', label: h(RouterLink, { to: '/jsx/a' }, () => 'defineRender') },
+          { key: 'jsx-b', label: h(RouterLink, { to: '/jsx/b' }, () => 'defineComponent') },
+        ],
+      },
+      {
+        key: 'submenu',
+        label: 'submenu',
+        children: [
+          { key: 'about', label: h(RouterLink, { to: '/about' }, () => 'about') },
         ],
       },
     ],
   },
+
   {
-    key: 'antdv',
-    label: h('a', { href: 'https://antdv.com', target: '_blank' }, 'antdv'),
-    title: 'antdv',
+    key: 'others',
+    label: 'Group',
+    children: [
+      {
+        key: 'github',
+        icon: h(GithubOutlined),
+        label: h('a', { href: 'https://github.com/liuw5367/vue-starter', target: '_blank' }, 'vue-starter'),
+      },
+      {
+        key: 'antdv',
+        icon: h(AntDesignOutlined),
+        label: h('a', { href: 'https://antdv.com', target: '_blank' }, 'antdv'),
+      },
+    ],
   },
 ])
 </script>

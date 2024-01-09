@@ -1,26 +1,9 @@
 <script lang="ts" setup>
-import type { VueElement } from 'vue'
-import { HomeOutlined, MailOutlined } from '@ant-design/icons-vue'
+import { AntDesignOutlined, AppstoreOutlined, GithubOutlined, HomeOutlined } from '@ant-design/icons-vue'
 import type { ItemType, MenuProps } from 'ant-design-vue'
 
 const selectedKeys = ref<string[]>(['home'])
-const openKeys = ref<string[]>(['sub1'])
-
-function getItem(
-  label: VueElement | string,
-  key: string,
-  icon?: any,
-  children?: ItemType[],
-  type?: 'group',
-): ItemType {
-  return {
-    key,
-    icon,
-    children,
-    label,
-    type,
-  } as ItemType
-}
+const openKeys = ref<string[]>(['One'])
 
 const items: ItemType[] = reactive([
   {
@@ -29,21 +12,60 @@ const items: ItemType[] = reactive([
     icon: h(HomeOutlined),
     label: h(RouterLink, { to: '/' }, () => 'home'),
   },
-  getItem('One', 'sub1', () => h(MailOutlined), [
-    getItem('func', 'g1', null, [
-      { key: '1', label: h(RouterLink, { to: '/store' }, () => 'store') },
-      { key: '2', label: h(RouterLink, { to: '/md' }, () => 'markdown') },
-    ], 'group'),
-    getItem('JSX', 'g2', null, [
-      { key: 'jsx-a', label: h(RouterLink, { to: '/jsx/a' }, () => 'defineComponent') },
-      { key: 'jsx-b', label: h(RouterLink, { to: '/jsx/b' }, () => 'defineRender') },
-      getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
-    ], 'group'),
-  ]),
+
+  {
+    key: 'One',
+    label: 'One',
+    icon: h(AppstoreOutlined),
+    children: [
+      {
+        key: 'function',
+        type: 'group',
+        label: 'function',
+        children: [
+          { key: 'list', label: h(RouterLink, { to: '/list' }, () => 'list') },
+          { key: 'store', label: h(RouterLink, { to: '/store' }, () => 'store') },
+          { key: 'markdown', label: h(RouterLink, { to: '/md' }, () => 'markdown') },
+        ],
+      },
+      {
+        key: 'jsx',
+        type: 'group',
+        label: 'jsx',
+        children: [
+          { key: 'jsx-a', label: h(RouterLink, { to: '/jsx/a' }, () => 'defineRender') },
+          { key: 'jsx-b', label: h(RouterLink, { to: '/jsx/b' }, () => 'defineComponent') },
+        ],
+      },
+      {
+        key: 'submenu',
+        label: 'submenu',
+        children: [
+          { key: 'about', label: h(RouterLink, { to: '/about' }, () => 'about') },
+        ],
+      },
+    ],
+  },
 
   { type: 'divider' },
 
-  getItem('Group', 'grp', null, [getItem('Option 13', '13'), getItem('Option 14', '14')], 'group'),
+  {
+    key: 'others',
+    type: 'group',
+    label: 'Group',
+    children: [
+      {
+        key: 'github',
+        icon: h(GithubOutlined),
+        label: h('a', { href: 'https://github.com/liuw5367/vue-starter', target: '_blank' }, 'vue-starter'),
+      },
+      {
+        key: 'antdv',
+        icon: h(AntDesignOutlined),
+        label: h('a', { href: 'https://antdv.com', target: '_blank' }, 'antdv'),
+      },
+    ],
+  },
 ])
 
 const handleClick: MenuProps['onClick'] = (e) => {

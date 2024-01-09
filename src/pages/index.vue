@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useRouteParams, useRouteQuery } from '@vueuse/router'
-
 const userId1 = useRouteParams('userId')
 const userId2 = useRouteParams('userId', '-1') // or with a default value
 const userId3 = useRouteParams('page', '1', { transform: Number }) // or transforming value
@@ -17,12 +15,10 @@ search1.value = 'foobar' // router.replace({ query: { search: 'foobar' } })
 // const searchHash = useRouteHash()
 // console.log(searchHash.value) // route.hash
 // searchHash.value = 'foobar' // router.replace({ hash: 'foobar' })
-
-fetch('/api/list').then(console.log)
 </script>
 
 <template>
-  <PageContainer container-class="pl-10">
+  <PageContainer class="pl-10">
     <div flex items-center space-x-4>
       <!-- svg -->
       <SvgIcon name="community" class="text-$color-primary !h-8 !w-8" />

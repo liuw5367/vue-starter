@@ -4,7 +4,7 @@ import { setupLayouts } from 'virtual:generated-layouts'
 import NProgress from 'nprogress'
 import HomeView from '@/pages/index.vue'
 
-const _routes: RouteRecordRaw[] = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'home',
@@ -38,8 +38,9 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from) => {
-  if (to.path !== from.path)
+  if (to.path !== from.path) {
     NProgress.start()
+  }
 })
 router.afterEach(() => {
   NProgress.done()
